@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/numeric#floating-point-types"
+    ],
+    "Title": [
+        "Floating-Point Types"
+    ],
+    "Feature": [
+        "DOUBLE"
+    ],
+    "Description": [
+        "name: DOUBLE; Aliases: FLOAT8; Description: Double precision floating-point number (8 bytes);\n"
+    ],
+    "Examples": [
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": []
+}

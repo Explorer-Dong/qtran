@@ -1,20 +1,22 @@
 {
     "HTML": [
-        "https://clickhouse.com/docs/en/sql-reference/data-types/special-data-types/expression"
+        "https://clickhouse.com/docs/sql-reference/data-types/geo"
     ],
     "Title": [
-        "Expression"
+        "MultiPolygon"
     ],
     "Feature": [
-        "Expression"
+        "MultiPolygon"
     ],
     "Description": [
-        "Expression",
-        "Expressions are used for representing lambdas in high-order functions."
+        "MultiPolygon consists of multiple polygons and is stored as an array of polygons: Array(Polygon).",
+        "Example\n\nThis multipolygon consists of two separate polygons — the first one without holes, and the second with one hole:\n\nCREATE TABLE geo_multipolygon (mpg MultiPolygon) ENGINE = Memory();\nINSERT INTO geo_multipolygon VALUES([[[(0, 0), (10, 0), (10, 10), (0, 10)]], [[(20, 20), (50, 20), (50, 50), (20, 50)],[(30, 30), (50, 50), (50, 30)]]]);\nSELECT mpg, toTypeName(mpg) FROM geo_multipolygon;\n\n\nResult:\n\n┌─mpg─────────────────────────────────────────────────────────────────────────────────────────────┬─toTypeName(mpg)─┐\n│ [[[(0,0),(10,0),(10,10),(0,10)]],[[(20,20),(50,20),(50,50),(20,50)],[(30,30),(50,50),(50,30)]]] │ MultiPolygon    │\n└─────────────────────────────────────────────────────────────────────────────────────────────────┴─────────────────┘\n\n\n"
     ],
-    "Examples": [],
+    "Examples": [
+        "CREATE TABLE geo_multipolygon (mpg MultiPolygon) ENGINE = Memory();\nINSERT INTO geo_multipolygon VALUES([[[(0, 0), (10, 0), (10, 10), (0, 10)]], [[(20, 20), (50, 20), (50, 50), (20, 50)],[(30, 30), (50, 50), (50, 30)]]]);\nSELECT mpg, toTypeName(mpg) FROM geo_multipolygon;"
+    ],
     "Category": [
-        "Expression"
+        "Spatial Data Types"
     ],
     "EffectiveSQLsRefined": []
 }

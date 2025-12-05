@@ -1,0 +1,25 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/gis-class-multilinestring.html"
+    ],
+    "Title": [
+        "13.4.2.11 MultiLineString Class"
+    ],
+    "Feature": [
+        "MultiLineString"
+    ],
+    "Description": [
+        "A MultiLineString is a MultiCurve geometry collection composed of LineString elements.",
+        "MultiLineString Examples",
+        "On a region map, a MultiLineString could represent a river system or a highway system."
+    ],
+    "Examples": [],
+    "Category": [
+        "Spatial Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": []
+}

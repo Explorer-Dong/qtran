@@ -1,39 +1,39 @@
 {
     "HTML": [
-        "https://www.postgresql.org/docs/16/datatype-character.html"
+        "https://www.postgresql.org/docs/16/datatype-binary.html"
     ],
     "Title": [
-        "\"char\""
+        "bytea"
     ],
     "Feature": [
-        "\"char\""
+        "bytea"
     ],
     "Description": [
         "Storage Size",
-        "1 byte",
+        "1 or 4 bytes plus the actual binary string",
         "Description",
-        "single-byte internal type"
+        "variable-length binary string"
     ],
     "Examples": [],
     "Category": [
-        "Character Types"
+        "String Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT 'a'::char;"
+        "SELECT decode('your_binary_string', 'escape')::bytea;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 273,
-            "Prompt Tokens": 254,
-            "Completion Tokens": 19,
-            "Total Cost (USD)": 4.95e-05
+            "Total Tokens": 284,
+            "Prompt Tokens": 258,
+            "Completion Tokens": 26,
+            "Total Cost (USD)": 5.429999999999999e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT 'a'::char;"
+        "SELECT decode('your_binary_string', 'escape')::bytea;"
     ]
 }

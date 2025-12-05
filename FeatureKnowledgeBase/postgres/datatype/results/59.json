@@ -1,53 +1,30 @@
 {
     "HTML": [
-        "https://www.postgresql.org/docs/16/datatype-pseudo.html"
+        "https://www.postgresql.org/docs/16/datatype-json.html#DATATYPE-JSONPATH"
     ],
     "Title": [
-        "any"
+        "8.14. JSON Types"
     ],
     "Feature": [
-        "any"
+        "jsonb"
     ],
     "Description": [
-        "Description",
-        "Indicates that a function accepts any input data type."
+        "Stores JSON in a decomposed binary format.\n\nAutomatically:\n\nRemoves whitespace\n\nOrders object keys\n\nRemoves duplicate keys (keeps the last)\n\nSupports indexing (GIN, BTREE) and is more efficient for querying.\n\nRecommended for most use cases."
     ],
-    "Examples": [],
+    "Examples": [
+        "CREATE TABLE orders (\n    id SERIAL PRIMARY KEY,\n    details JSONB\n);\n\nINSERT INTO orders (details) VALUES\n('{\n    \"order_id\": 1001,\n    \"items\": [\n        { \"name\": \"Keyboard\", \"qty\": 1 },\n        { \"name\": \"Mouse\", \"qty\": 2 }\n    ],\n    \"total\": 85.50\n}');\n"
+    ],
     "Category": [
-        "Pseudo-Types"
+        "JSON Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT ANY(column_name) FROM table_name;",
-        "SELECT column_name FROM table_name WHERE column_name = ANY(array_value);",
-        "SELECT column_name FROM (VALUES (1), (2), (3)) AS table_name(column_name) WHERE column_name = ANY(array[1, 2, 3]);"
     ],
     "EffectiveSQLsGeneratedCosts": [
-        {
-            "Total Tokens": 266,
-            "Prompt Tokens": 245,
-            "Completion Tokens": 21,
-            "Total Cost (USD)": 4.935e-05
-        },
-        {
-            "Total Tokens": 430,
-            "Prompt Tokens": 403,
-            "Completion Tokens": 27,
-            "Total Cost (USD)": 7.664999999999999e-05
-        },
-        {
-            "Total Tokens": 623,
-            "Prompt Tokens": 574,
-            "Completion Tokens": 49,
-            "Total Cost (USD)": 0.00011549999999999999
-        }
     ],
     "EffectiveSQLsGeneratedErrors": [
-        "(psycopg2.errors.SyntaxError) syntax error at or near \"ANY\"\nLINE 1: SELECT ANY(column_name) FROM table_name;\n               ^\n\n",
-        "(psycopg2.errors.UndefinedTable) relation \"table_name\" does not exist\nLINE 1: SELECT column_name FROM table_name WHERE column_name = ANY(a...\n                                ^\n\n",
-        "None"
     ],
     "EffectiveSQLs": [
-        "SELECT column_name FROM (VALUES (1), (2), (3)) AS table_name(column_name) WHERE column_name = ANY(array[1, 2, 3]);"
+        "CREATE TABLE orders (\n    id SERIAL PRIMARY KEY,\n    details JSONB\n);\n\nINSERT INTO orders (details) VALUES\n('{\n    \"order_id\": 1001,\n    \"items\": [\n        { \"name\": \"Keyboard\", \"qty\": 1 },\n        { \"name\": \"Mouse\", \"qty\": 2 }\n    ],\n    \"total\": 85.50\n}');\n"
     ]
 }

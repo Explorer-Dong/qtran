@@ -6,7 +6,7 @@
         "8.17. Range Types"
     ],
     "Feature": [
-        "8.17. Range Types"
+        "Range Types"
     ],
     "Description": [
         "\n\n\n8.17.\u00a0Range Types #\n\n\n",
@@ -27,7 +27,7 @@
     ],
     "Examples": [],
     "Category": [
-        "Range Types"
+        "Nested or Composite Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [

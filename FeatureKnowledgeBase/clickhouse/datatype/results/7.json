@@ -65,7 +65,7 @@
         "SELECTtoDateTime(timestamp, 'Europe/London') as lon_time,toDateTime(timestamp, 'Asia/Istanbul') as mos_timeFROM dt"
     ],
     "Category": [
-        "DateTime"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [
         "INSERT INTO dt VALUES ('2019-01-01 00:00:00', 1), (1546300800, 3);",

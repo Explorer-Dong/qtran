@@ -1,68 +1,43 @@
 {
     "HTML": [
-        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/url-types"
     ],
     "Title": [
-        "INTERVAL DAY"
+        "URL Datatype"
     ],
     "Feature": [
-        "INTERVAL DAY"
+        "URL Datatype"
     ],
     "Description": [
-        "day_interval",
-        "8-bytes",
-        "decimal(19,3) number of seconds with milliseconds precision"
+        "URL Datatype",
+        "The related URL data type is a subdomain over character strings and represent valid Uniform Resource Locators.",
+        "Usage example:",
+        "CREATE TABLE URL_example (c1 URL, c2 URL(512) NOT NULL);\n",
+        "You can use cast() or convert() functions to convert a valid url string to a url type.",
+        "select cast('https://www.monetdb.org/documentation/user-guide/' as url);\n\nselect convert('https://www.monetdb.org/documentation/user-guide/', url);\n",
+        "You can also use the url prefix:",
+        "select url 'https://www.monetdb.org/documentation/user-guide/';\n",
+        "A collection of URL functions are available to create new URLs or extract portions of an URL."
     ],
-    "Examples": [],
+    "Examples": [
+        "CREATE TABLE URL_example (c1 URL, c2 URL(512) NOT NULL);\n",
+        "select cast('https://www.monetdb.org/documentation/user-guide/' as url);\n\nselect convert('https://www.monetdb.org/documentation/user-guide/', url);\n",
+        "select url 'https://www.monetdb.org/documentation/user-guide/';\n"
+    ],
     "Category": [
-        "Temporal Datatypes"
+        "URL Data Types"
     ],
-    "EffectiveSQLsRefined": [],
-    "EffectiveSQLsGenerated": [
-        "SELECT INTERVAL '1 DAY';",
-        "SELECT INTERVAL '1 DAY'::INTERVAL;",
-        "SELECT INTERVAL '1 DAY';",
-        "SELECT INTERVAL '1 DAY';",
-        "SELECT INTERVAL '1 DAY'"
+    "EffectiveSQLsRefined": [
+        "select cast('https://www.monetdb.org/documentation/user-guide/' as url);",
+        "select convert('https://www.monetdb.org/documentation/user-guide/', url);",
+        "select url 'https://www.monetdb.org/documentation/user-guide/';"
     ],
-    "EffectiveSQLsGeneratedCosts": [
-        {
-            "Total Tokens": 282,
-            "Prompt Tokens": 262,
-            "Completion Tokens": 20,
-            "Total Cost (USD)": 5.13e-05
-        },
-        {
-            "Total Tokens": 443,
-            "Prompt Tokens": 420,
-            "Completion Tokens": 23,
-            "Total Cost (USD)": 7.679999999999998e-05
-        },
-        {
-            "Total Tokens": 588,
-            "Prompt Tokens": 568,
-            "Completion Tokens": 20,
-            "Total Cost (USD)": 9.719999999999998e-05
-        },
-        {
-            "Total Tokens": 746,
-            "Prompt Tokens": 726,
-            "Completion Tokens": 20,
-            "Total Cost (USD)": 0.00012089999999999998
-        },
-        {
-            "Total Tokens": 903,
-            "Prompt Tokens": 884,
-            "Completion Tokens": 19,
-            "Total Cost (USD)": 0.000144
-        }
-    ],
-    "EffectiveSQLsGeneratedErrors": [
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY';\"\n\n",
-        "(pymonetdb.exceptions.OperationalError) 42000!Unexpected symbol (:)\n\n",
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY';\"\n\n",
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY';\"\n\n",
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 DAY'\n!;\"\n\n"
-    ],
-    "EffectiveSQLs": []
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "select cast('https://www.monetdb.org/documentation/user-guide/' as url);",
+        "select convert('https://www.monetdb.org/documentation/user-guide/', url);",
+        "select url 'https://www.monetdb.org/documentation/user-guide/';"
+    ]
 }

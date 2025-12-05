@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/text"
+    ],
+    "Title": [
+        "Text Types"
+    ],
+    "Feature": [
+        "VARCHAR(n)"
+    ],
+    "Description": [
+        "name: VARCHAR(n); Aliases: CHAR(n), BPCHAR(n), STRING(n), TEXT(n); Description: Variable-length character string. The maximum length n has no effect and is only provided for compatibility;"
+    ],
+    "Examples": [
+        "SELECT TIMESTAMPTZ '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMPTZ '1992-09-20 12:30:00.123456789+01:00';"
+    ],
+    "Category": [
+        "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMPTZ '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMPTZ '1992-09-20 12:30:00.123456789+01:00';"
+    ]
+}

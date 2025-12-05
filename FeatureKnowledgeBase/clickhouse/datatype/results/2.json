@@ -3,10 +3,10 @@
         "https://clickhouse.com/docs/en/sql-reference/data-types/decimal"
     ],
     "Title": [
-        "Decimal"
+        "Decimal, Decimal(P), Decimal(P, S), Decimal32(S), Decimal64(S), Decimal128(S), Decimal256(S)"
     ],
     "Feature": [
-        "Decimal"
+        "Decimal, Decimal(P), Decimal(P, S), Decimal32(S), Decimal64(S), Decimal128(S), Decimal256(S)"
     ],
     "Description": [
         "Decimal, Decimal(P), Decimal(P, S), Decimal32(S), Decimal64(S), Decimal128(S), Decimal256(S)",
@@ -56,7 +56,7 @@
         "SELECT toDecimal32(1, 8) < 100"
     ],
     "Category": [
-        "Decimal"
+        "Numeric Data Types"
     ],
     "EffectiveSQLsRefined": [
         "SET decimal_check_overflow = 0;"

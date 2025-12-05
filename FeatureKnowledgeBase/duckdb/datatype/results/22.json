@@ -1,0 +1,24 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/numeric#floating-point-types"
+    ],
+    "Title": [
+        "Floating-Point Types"
+    ],
+    "Feature": [
+        "FLOAT"
+    ],
+    "Description": [
+        "name: FLOAT; Aliases: FLOAT4, REAL; Description: Single precision floating-point number (4 bytes);"
+    ],
+    "Examples": [
+    ],
+    "Category": [
+        "Numeric Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": []
+}

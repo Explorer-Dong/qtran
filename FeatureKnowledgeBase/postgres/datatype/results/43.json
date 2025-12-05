@@ -6,7 +6,7 @@
         "8.16. Composite Types"
     ],
     "Feature": [
-        "8.16. Composite Types"
+        "Composite Types"
     ],
     "Description": [
         "\n\n\n8.16.\u00a0Composite Types #\n\n\n",
@@ -21,7 +21,7 @@
     ],
     "Examples": [],
     "Category": [
-        "Composite Types"
+        "Nested or Composite Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [

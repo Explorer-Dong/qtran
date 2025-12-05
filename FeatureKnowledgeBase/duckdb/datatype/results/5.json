@@ -103,7 +103,7 @@
         "SELECT unnest(['ok'::mood, 'happy'::mood, 'sad'::mood]) AS m\nORDER BY m;\n"
     ],
     "Category": [
-        "Enum"
+        "String Data Types"
     ],
     "EffectiveSQLsRefined": [
         "CREATE TYPE mood AS ENUM ('sad', 'ok', 'happy');",

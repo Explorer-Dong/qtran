@@ -68,7 +68,7 @@
         "Constraint Error: Duplicate key \"id: 1\" violates primary key constraint.\nIf this is an unexpected constraint violation please double check with the known index limitations section in our documentation (https://duckdb.org/docs/sql/indexes).\n"
     ],
     "Category": [
-        "List"
+        "Nested or Composite Data Types"
     ],
     "EffectiveSQLsRefined": [
         "SELECT [1, 2, 3];",

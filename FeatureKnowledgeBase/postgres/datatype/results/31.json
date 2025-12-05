@@ -3,55 +3,47 @@
         "https://www.postgresql.org/docs/16/datatype-geometric.html"
     ],
     "Title": [
-        "path"
+        "circle"
     ],
     "Feature": [
-        "path"
+        "circle"
     ],
     "Description": [
         "Storage Size",
-        "16+16n bytes",
+        "24 bytes",
         "Description",
-        "Open path",
+        "Circle",
         "Representation",
-        "[(x1,y1),...]"
+        "<(x,y),r> (center point and radius)"
     ],
     "Examples": [],
     "Category": [
-        "Geometric Types"
+        "Spatial Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT path FROM my_table;",
-        "SELECT path;",
-        "SELECT * FROM (VALUES (NULL)) AS temp(path);"
+        "SELECT 'circle'::circle;",
+        "SELECT '((0,0),1)'::circle;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 277,
-            "Prompt Tokens": 259,
-            "Completion Tokens": 18,
-            "Total Cost (USD)": 4.9649999999999994e-05
+            "Total Tokens": 279,
+            "Prompt Tokens": 260,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.04e-05
         },
         {
-            "Total Tokens": 429,
-            "Prompt Tokens": 414,
-            "Completion Tokens": 15,
-            "Total Cost (USD)": 7.11e-05
-        },
-        {
-            "Total Tokens": 587,
-            "Prompt Tokens": 562,
-            "Completion Tokens": 25,
-            "Total Cost (USD)": 9.93e-05
+            "Total Tokens": 441,
+            "Prompt Tokens": 417,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 7.694999999999999e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
-        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT path FROM my_table;\n                         ^\n\n",
-        "(psycopg2.errors.UndefinedColumn) column \"path\" does not exist\nLINE 1: SELECT path;\n               ^\n\n",
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type circle: \"circle\"\nLINE 1: SELECT 'circle'::circle;\n               ^\n\n",
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT * FROM (VALUES (NULL)) AS temp(path);"
+        "SELECT '((0,0),1)'::circle;"
     ]
 }

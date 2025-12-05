@@ -3,43 +3,43 @@
         "https://www.postgresql.org/docs/16/datatype-datetime.html"
     ],
     "Title": [
-        "time [ (p) ] [ without time zone ]"
+        "interval [ fields ] [ (p) ]"
     ],
     "Feature": [
-        "time [ (p) ] [ without time zone ]"
+        "interval [ fields ] [ (p) ]"
     ],
     "Description": [
         "Storage Size",
-        "8 bytes",
+        "16 bytes",
         "Description",
-        "time of day (no date)",
+        "time interval",
         "Low Value",
-        "00:00:00",
+        "-178000000 years",
         "High Value",
-        "24:00:00",
+        "178000000 years",
         "Resolution",
         "1 microsecond"
     ],
     "Examples": [],
     "Category": [
-        "Date divide Time Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT '12:30:00'::time without time zone;"
+        "SELECT INTERVAL '1 day';"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 344,
-            "Prompt Tokens": 318,
-            "Completion Tokens": 26,
-            "Total Cost (USD)": 6.33e-05
+            "Total Tokens": 324,
+            "Prompt Tokens": 304,
+            "Completion Tokens": 20,
+            "Total Cost (USD)": 5.76e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT '12:30:00'::time without time zone;"
+        "SELECT INTERVAL '1 day';"
     ]
 }

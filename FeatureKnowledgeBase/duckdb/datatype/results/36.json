@@ -1,0 +1,41 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/numeric#universally-unique-identifiers-uuids"
+    ],
+    "Title": [
+        "Universally Unique Identifiers (UUIDs)"
+    ],
+    "Feature": [
+        "Universally Unique Identifiers (UUIDs)"
+    ],
+    "Description": [
+        "DuckDB supports universally unique identifiers (UUIDs) through the UUID type.",
+        "These use 128 bits and are represented internally as HUGEINT values.",
+        "When printed, they are shown with lowercase hexadecimal characters, separated by dashes as follows: 12345678-1234-1234-1234-1234567890ab (using 36 characters in total including the dashes).",
+        "For example, 4ac7a9e9-607c-4c8a-84f3-843f0191e3fd is a valid UUID.",
+        "DuckDB supports generating UUIDv4 and UUIDv7 identifiers.",
+        "To retrieve the version of a UUID value, use the uuid_extract_version function.",
+        "UUIDv4",
+        "To generate a UUIDv4 value, use the uuid() function or it aliases the uuidv4() and gen_random_uuid() functions.",
+        "UUIDv7",
+        "To generate a UUIDv7 value, use the uuidv7() function.",
+        "To retrieve the timestamp from a UUIDv7 value, use the uuid_extract_timestamp function:",
+        "SELECT uuid_extract_timestamp(uuidv7()) AS ts;",
+        "ts\n2025-04-19 15:51:20.07+00"
+    ],
+    "Examples": [
+
+    ],
+    "Category": [
+        "UUID Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "SELECT uuid_extract_timestamp(uuidv7()) AS ts;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT uuid_extract_timestamp(uuidv7()) AS ts;"
+    ]
+}

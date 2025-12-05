@@ -28,7 +28,7 @@
         "SELECT\n    '-infinity'::DATE AS negative,\n    'epoch'::DATE AS epoch,\n    'infinity'::DATE AS positive;\n"
     ],
     "Category": [
-        "Date"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [
         "SELECT DATE '1992-09-20';",

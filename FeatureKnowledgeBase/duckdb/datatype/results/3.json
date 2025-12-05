@@ -37,7 +37,7 @@
         "SELECT * FROM integers WHERE i > 10;\n"
     ],
     "Category": [
-        "Boolean"
+        "Numeric Data Types"
     ],
     "EffectiveSQLsRefined": [
         "SELECT true, false, NULL::BOOLEAN;",

@@ -1,20 +1,22 @@
 {
     "HTML": [
-        "https://clickhouse.com/docs/en/sql-reference/data-types/special-data-types"
+        "https://clickhouse.com/docs/sql-reference/data-types/geo"
     ],
     "Title": [
-        "Special Data Types"
+        "Polygon"
     ],
     "Feature": [
-        "Special Data Types"
+        "Polygon"
     ],
     "Description": [
-        "Special Data Types",
-        "Special data type values can\u2019t be serialized for saving in a table or output in query results, but can be used as an intermediate result during query execution."
+        "Polygon is a polygon with holes stored as an array of rings: Array(Ring). First element of outer array is the outer shape of polygon and all the following elements are holes.",
+        "Example\n\nThis is a polygon with one hole:\n\nCREATE TABLE geo_polygon (pg Polygon) ENGINE = Memory();\nINSERT INTO geo_polygon VALUES([[(20, 20), (50, 20), (50, 50), (20, 50)], [(30, 30), (50, 50), (50, 30)]]);\nSELECT pg, toTypeName(pg) FROM geo_polygon;\n\n\nResult:\n\n┌─pg────────────────────────────────────────────────────────────┬─toTypeName(pg)─┐\n│ [[(20,20),(50,20),(50,50),(20,50)],[(30,30),(50,50),(50,30)]] │ Polygon        │\n└───────────────────────────────────────────────────────────────┴────────────────┘"
     ],
-    "Examples": [],
+    "Examples": [
+        "CREATE TABLE geo_polygon (pg Polygon) ENGINE = Memory();\nINSERT INTO geo_polygon VALUES([[(20, 20), (50, 20), (50, 50), (20, 50)], [(30, 30), (50, 50), (50, 30)]]);\nSELECT pg, toTypeName(pg) FROM geo_polygon;"
+    ],
     "Category": [
-        "Special Data Types"
+        "Spatial Data Types"
     ],
     "EffectiveSQLsRefined": []
 }

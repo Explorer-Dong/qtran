@@ -1,39 +1,45 @@
 {
     "HTML": [
-        "https://www.postgresql.org/docs/16/datatype-binary.html"
+        "https://www.postgresql.org/docs/16/datatype-datetime.html"
     ],
     "Title": [
-        "bytea"
+        "timestamp [ (p) ] with time zone"
     ],
     "Feature": [
-        "bytea"
+        "timestamp [ (p) ] with time zone"
     ],
     "Description": [
         "Storage Size",
-        "1 or 4 bytes plus the actual binary string",
+        "8 bytes",
         "Description",
-        "variable-length binary string"
+        "both date and time, with time zone",
+        "Low Value",
+        "4713 BC",
+        "High Value",
+        "294276 AD",
+        "Resolution",
+        "1 microsecond"
     ],
     "Examples": [],
     "Category": [
-        "Binary Data Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT decode('your_binary_string', 'escape')::bytea;"
+        "SELECT NOW() AT TIME ZONE 'UTC';"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 284,
-            "Prompt Tokens": 258,
-            "Completion Tokens": 26,
-            "Total Cost (USD)": 5.429999999999999e-05
+            "Total Tokens": 331,
+            "Prompt Tokens": 308,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.9999999999999995e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT decode('your_binary_string', 'escape')::bytea;"
+        "SELECT NOW() AT TIME ZONE 'UTC';"
     ]
 }

@@ -1,68 +1,47 @@
 {
     "HTML": [
-        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/temporal-types"
+        "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/network-types"
     ],
     "Title": [
-        "INTERVAL YEAR"
+        "Network Datatype"
     ],
     "Feature": [
-        "INTERVAL YEAR"
+        "inet"
     ],
     "Description": [
-        "month_interval",
-        "4-bytes",
-        "integer number of months"
+        "Network Types",
+        "The SQL type inet describes IPv4 network addresses, such as 192.168.1.5/24.",
+        "Usage example:",
+        "CREATE TABLE inet_example (address inet NOT NULL);\n",
+        "A valid IPv4 Network Address string has a specific syntax, see also IPv4 address.",
+        "You can use cast() and convert() functions to convert a valid inet string into an inet value.",
+        "select cast('192.168.1.5/24' as inet); \n",
+        "select convert('192.168.1.5/24', inet); \n",
+        "You can also use the inet casting prefix:",
+        "select inet '192.168.1.5/24'; \n",
+        "The inet module contains a collection of functions and operators\nthat operate on IPv4 addresses.\nThe most relevant functions are the 'containment' functions that deal with subnet masks.\nThe functionality of this module is greatly inspired by the PostgreSQL inet data type.",
+        "It is currently extended to also support IPv6."
     ],
-    "Examples": [],
+    "Examples": [
+        "CREATE TABLE inet_example (address inet NOT NULL);\n",
+        "select cast('192.168.1.5/24' as inet); \n",
+        "select convert('192.168.1.5/24', inet); \n",
+        "select inet '192.168.1.5/24'; \n"
+    ],
     "Category": [
-        "Temporal Datatypes"
+        "Network Data Types"
     ],
-    "EffectiveSQLsRefined": [],
-    "EffectiveSQLsGenerated": [
-        "SELECT INTERVAL '1 YEAR';",
-        "SELECT INTERVAL '1 YEAR'",
-        "SELECT INTERVAL '1 YEAR' AS interval_year",
-        "SELECT INTERVAL '1 YEAR'",
-        "SELECT INTERVAL '1 YEAR'"
+    "EffectiveSQLsRefined": [
+        "select cast('192.168.1.5/24' as inet);",
+        "select convert('192.168.1.5/24', inet);",
+        "select inet '192.168.1.5/24';"
     ],
-    "EffectiveSQLsGeneratedCosts": [
-        {
-            "Total Tokens": 274,
-            "Prompt Tokens": 254,
-            "Completion Tokens": 20,
-            "Total Cost (USD)": 5.01e-05
-        },
-        {
-            "Total Tokens": 431,
-            "Prompt Tokens": 412,
-            "Completion Tokens": 19,
-            "Total Cost (USD)": 7.319999999999999e-05
-        },
-        {
-            "Total Tokens": 594,
-            "Prompt Tokens": 571,
-            "Completion Tokens": 23,
-            "Total Cost (USD)": 9.944999999999998e-05
-        },
-        {
-            "Total Tokens": 750,
-            "Prompt Tokens": 731,
-            "Completion Tokens": 19,
-            "Total Cost (USD)": 0.00012104999999999999
-        },
-        {
-            "Total Tokens": 909,
-            "Prompt Tokens": 890,
-            "Completion Tokens": 19,
-            "Total Cost (USD)": 0.0001449
-        }
-    ],
-    "EffectiveSQLsGeneratedErrors": [
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 YEAR';\"\n\n",
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 YEAR'\n!;\"\n\n",
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected AS in: \"select interval '1 YEAR' as\"\n\n",
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 YEAR'\n!;\"\n\n",
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected SCOLON in: \"select interval '1 YEAR'\n!;\"\n\n"
-    ],
-    "EffectiveSQLs": []
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "select cast('192.168.1.5/24' as inet);",
+        "select convert('192.168.1.5/24', inet);",
+        "select inet '192.168.1.5/24';"
+    ]
 }

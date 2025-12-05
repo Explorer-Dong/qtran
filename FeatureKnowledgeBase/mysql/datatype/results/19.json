@@ -1,0 +1,40 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/char.html"
+    ],
+    "Title": [
+        "13.3.2 The CHAR and VARCHAR Types"
+    ],
+    "Feature": [
+        "[NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name]"
+    ],
+    "Description": [
+        "A variable-length string. M represents the maximum column length in characters. The range of M is 0 to 65,535. The effective maximum length of a VARCHAR is subject to the maximum row size (65,535 bytes, which is shared among all columns) and the character set used. For example, utf8mb3 characters can require up to three bytes per character, so a VARCHAR column that uses the utf8mb3 character set can be declared to be a maximum of 21,844 characters. See Section 10.4.7, “Limits on Table Column Count and Row Size”.",
+        "",
+        "MySQL stores VARCHAR values as a 1-byte or 2-byte length prefix plus data. The length prefix indicates the number of bytes in the value. A VARCHAR column uses one length byte if values require no more than 255 bytes, two length bytes if values may require more than 255 bytes.",
+        "",
+        "Note",
+        "MySQL follows the standard SQL specification, and does not remove trailing spaces from VARCHAR values.",
+        "",
+        "VARCHAR is shorthand for CHARACTER VARYING. NATIONAL VARCHAR is the standard SQL way to define that a VARCHAR column should use some predefined character set. MySQL uses utf8mb3 as this predefined character set. Section 12.3.7, “The National Character Set”. NVARCHAR is shorthand for NATIONAL VARCHAR."
+    ],
+    "Examples": [
+        "mysql> CREATE TABLE vc (v VARCHAR(4), c CHAR(4));\nQuery OK, 0 rows affected (0.01 sec)\n\nmysql> INSERT INTO vc VALUES ('ab  ', 'ab  ');\nQuery OK, 1 row affected (0.00 sec)\n\nmysql> SELECT CONCAT('(', v, ')'), CONCAT('(', c, ')') FROM vc;\n+---------------------+---------------------+\n| CONCAT('(', v, ')') | CONCAT('(', c, ')') |\n+---------------------+---------------------+\n| (ab  )              | (ab)                |\n+---------------------+---------------------+\n1 row in set (0.06 sec)"
+    ],
+    "Category": [
+        "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE vc (v VARCHAR(4), c CHAR(4));",
+        "INSERT INTO vc VALUES ('ab  ', 'ab  ');",
+        "SELECT CONCAT('(', v, ')'), CONCAT('(', c, ')') FROM vc;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE vc (v VARCHAR(4), c CHAR(4));",
+        "INSERT INTO vc VALUES ('ab  ', 'ab  ');",
+        "SELECT CONCAT('(', v, ')'), CONCAT('(', c, ')') FROM vc;"
+    ]
+}

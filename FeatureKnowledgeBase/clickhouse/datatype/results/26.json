@@ -1,20 +1,24 @@
 {
     "HTML": [
-        "https://clickhouse.com/docs/en/sql-reference/data-types/special-data-types/set"
+        "https://clickhouse.com/docs/sql-reference/data-types/geo"
     ],
     "Title": [
-        "Set"
+        "Geometry"
     ],
     "Feature": [
-        "Set"
+        "Geometry"
     ],
     "Description": [
-        "Set",
-        "Used for the right half of an IN expression."
+        "Geometry is a common type for all the types above. It is equivalent to a Variant of those types.",
+        "Example\n\nCREATE TABLE IF NOT EXISTS geo (geom Geometry) ENGINE = Memory();\nINSERT INTO geo VALUES ((1, 2));\nSELECT * FROM geo;\n\nResult:\n\n   ┌─geom──┐\n1. │ (1,2) │\n   └───────┘",
+        "CREATE TABLE IF NOT EXISTS geo_dst (geom Geometry) ENGINE = Memory();\n\nCREATE TABLE IF NOT EXISTS geo (geom String, id Int) ENGINE = Memory();\nINSERT INTO geo VALUES ('POLYGON((1 0,10 0,10 10,0 10,1 0),(4 4,5 4,5 5,4 5,4 4))', 1);\nINSERT INTO geo VALUES ('POINT(0 0)', 2);\nINSERT INTO geo VALUES ('MULTIPOLYGON(((1 0,10 0,10 10,0 10,1 0),(4 4,5 4,5 5,4 5,4 4)),((-10 -10,-10 -9,-9 10,-10 -10)))', 3);\nINSERT INTO geo VALUES ('LINESTRING(1 0,10 0,10 10,0 10,1 0)', 4);\nINSERT INTO geo VALUES ('MULTILINESTRING((1 0,10 0,10 10,0 10,1 0),(4 4,5 4,5 5,4 5,4 4))', 5);\nINSERT INTO geo_dst SELECT readWkt(geom) FROM geo ORDER BY id;\n\nSELECT * FROM geo_dst;\n\n\nResult:\n\n   ┌─geom─────────────────────────────────────────────────────────────────────────────────────────────────────────────┐\n1. │ [[(1,0),(10,0),(10,10),(0,10),(1,0)],[(4,4),(5,4),(5,5),(4,5),(4,4)]]                                            │\n2. │ (0,0)                                                                                                            │\n3. │ [[[(1,0),(10,0),(10,10),(0,10),(1,0)],[(4,4),(5,4),(5,5),(4,5),(4,4)]],[[(-10,-10),(-10,-9),(-9,10),(-10,-10)]]] │\n4. │ [(1,0),(10,0),(10,10),(0,10),(1,0)]                                                                              │\n5. │ [[(1,0),(10,0),(10,10),(0,10),(1,0)],[(4,4),(5,4),(5,5),(4,5),(4,4)]] "
     ],
-    "Examples": [],
+    "Examples": [
+        "CREATE TABLE IF NOT EXISTS geo (geom Geometry) ENGINE = Memory();\nINSERT INTO geo VALUES ((1, 2));\nSELECT * FROM geo;",
+        "CREATE TABLE IF NOT EXISTS geo_dst (geom Geometry) ENGINE = Memory();\n\nCREATE TABLE IF NOT EXISTS geo (geom String, id Int) ENGINE = Memory();\nINSERT INTO geo VALUES ('POLYGON((1 0,10 0,10 10,0 10,1 0),(4 4,5 4,5 5,4 5,4 4))', 1);\nINSERT INTO geo VALUES ('POINT(0 0)', 2);\nINSERT INTO geo VALUES ('MULTIPOLYGON(((1 0,10 0,10 10,0 10,1 0),(4 4,5 4,5 5,4 5,4 4)),((-10 -10,-10 -9,-9 10,-10 -10)))', 3);\nINSERT INTO geo VALUES ('LINESTRING(1 0,10 0,10 10,0 10,1 0)', 4);\nINSERT INTO geo VALUES ('MULTILINESTRING((1 0,10 0,10 10,0 10,1 0),(4 4,5 4,5 5,4 5,4 4))', 5);\nINSERT INTO geo_dst SELECT readWkt(geom) FROM geo ORDER BY id;\n\nSELECT * FROM geo_dst;"
+    ],
     "Category": [
-        "Set"
+        "Spatial Data Types"
     ],
     "EffectiveSQLsRefined": []
 }

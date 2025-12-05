@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/blob.html"
+    ],
+    "Title": [
+        "13.3.4 The BLOB and TEXT Types"
+    ],
+    "Feature": [
+        "TINYTEXT [CHARACTER SET charset_name] [COLLATE collation_name]"
+    ],
+    "Description": [
+        "A TEXT column with a maximum length of 255 (28 − 1) characters. The effective maximum length is less if the value contains multibyte characters. Each TINYTEXT value is stored using a 1-byte length prefix that indicates the number of bytes in the value."
+    ],
+    "Examples": [],
+    "Category": [
+        "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": []
+}

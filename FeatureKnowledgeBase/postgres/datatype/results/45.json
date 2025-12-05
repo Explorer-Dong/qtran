@@ -1,41 +1,38 @@
 {
     "HTML": [
-        "https://www.postgresql.org/docs/16/domains.html"
+        "https://www.postgresql.org/docs/16/datatype-pg-lsn.html"
     ],
     "Title": [
-        "8.18. Domain Types"
+        "8.20. pg_lsn Type"
     ],
     "Feature": [
-        "8.18. Domain Types"
+        "pg_lsn"
     ],
     "Description": [
-        "\n\n\n8.18.\u00a0Domain Types #\n\n\n",
-        "A domain is a user-defined data type that is based on another underlying type. Optionally, it can have constraints that restrict its valid values to a subset of what the underlying type would allow. Otherwise it behaves like the underlying type \u2014 for example, any operator or function that can be applied to the underlying type will work on the domain type. The underlying type can be any built-in or user-defined base type, enum type, array type, composite type, range type, or another domain.",
-        "For example, we could create a domain over integers that accepts only positive integers:",
-        "CREATE DOMAIN posint AS integer CHECK (VALUE > 0);\nCREATE TABLE mytable (id posint);\nINSERT INTO mytable VALUES(1);   -- works\nINSERT INTO mytable VALUES(-1);  -- fails\n",
-        "When an operator or function of the underlying type is applied to a domain value, the domain is automatically down-cast to the underlying type. Thus, for example, the result of mytable.id - 1 is considered to be of type integer not posint. We could write (mytable.id - 1)::posint to cast the result back to posint, causing the domain's constraints to be rechecked. In this case, that would result in an error if the expression had been applied to an id value of 1. Assigning a value of the underlying type to a field or variable of the domain type is allowed without writing an explicit cast, but the domain's constraints will be checked.",
-        "For additional information see CREATE DOMAIN."
+        "\n\n\n8.20.\u00a0pg_lsn Type #\n\n\n",
+        "The pg_lsn data type can be used to store LSN (Log Sequence Number) data which is a pointer to a location in the WAL. This type is a representation of XLogRecPtr and an internal system type of PostgreSQL.",
+        "Internally, an LSN is a 64-bit integer, representing a byte position in the write-ahead log stream. It is printed as two hexadecimal numbers of up to 8 digits each, separated by a slash; for example, 16/B374D848. The pg_lsn type supports the standard comparison operators, like = and >. Two LSNs can be subtracted using the - operator; the result is the number of bytes separating those write-ahead log locations. Also the number of bytes can be added into and subtracted from LSN using the +(pg_lsn,numeric) and -(pg_lsn,numeric) operators, respectively. Note that the calculated LSN should be in the range of pg_lsn type, i.e., between 0/0 and FFFFFFFF/FFFFFFFF."
     ],
     "Examples": [],
     "Category": [
-        "Domain Types"
+        "Other Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "CREATE DOMAIN posint AS integer CHECK (VALUE > 0);"
+        "SELECT pg_lsn '16/B374D848';"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 614,
-            "Prompt Tokens": 588,
-            "Completion Tokens": 26,
-            "Total Cost (USD)": 0.00010379999999999999
+            "Total Tokens": 521,
+            "Prompt Tokens": 497,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.895e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "CREATE DOMAIN posint AS integer CHECK (VALUE > 0);"
+        "SELECT pg_lsn '16/B374D848';"
     ]
 }

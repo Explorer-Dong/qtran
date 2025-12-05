@@ -1,46 +1,37 @@
 {
     "HTML": [
-        "https://clickhouse.com/docs/en/sql-reference/data-types/special-data-types/interval"
+        "https://clickhouse.com/docs/en/sql-reference/data-types/time"
     ],
     "Title": [
-        "Interval"
+        "Time"
     ],
     "Feature": [
-        "Interval"
+        "Time"
     ],
     "Description": [
-        "Interval",
-        "The family of data types representing time and date intervals. The resulting types of the INTERVAL operator.",
-        "Structure:",
-        "Time interval as an unsigned integer value.Type of an interval.",
-        "Supported interval types:",
-        "NANOSECONDMICROSECONDMILLISECONDSECONDMINUTEHOURDAYWEEKMONTHQUARTERYEAR",
-        "For each interval type, there is a separate data type. For example, the DAY interval corresponds to the IntervalDay data type:",
-        "SELECT toTypeName(INTERVAL 4 DAY)",
-        "\u250c\u2500toTypeName(toIntervalDay(4))\u2500\u2510\u2502 IntervalDay                  \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
-        "Usage Remarks\u200b",
-        "You can use Interval-type values in arithmetical operations with Date and DateTime-type values. For example, you can add 4 days to the current time:",
-        "SELECT now() as current_date_time, current_date_time + INTERVAL 4 DAY",
-        "\u250c\u2500\u2500\u2500current_date_time\u2500\u252c\u2500plus(now(), toIntervalDay(4))\u2500\u2510\u2502 2019-10-23 10:58:45 \u2502           2019-10-27 10:58:45 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
-        "Also it is possible to use multiple intervals simultaneously:",
-        "SELECT now() AS current_date_time, current_date_time + (INTERVAL 4 DAY + INTERVAL 3 HOUR)",
-        "\u250c\u2500\u2500\u2500current_date_time\u2500\u252c\u2500plus(current_date_time, plus(toIntervalDay(4), toIntervalHour(3)))\u2500\u2510\u2502 2024-08-08 18:31:39 \u2502                                                2024-08-12 21:31:39 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
-        "And to compare values with different intervals:",
-        "SELECT toIntervalMicrosecond(3600000000) = toIntervalHour(1);",
-        "\u250c\u2500less(toIntervalMicrosecond(179999999), toIntervalMinute(3))\u2500\u2510\u2502                                                           1 \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
-        "See Also\u200b",
-        "INTERVAL operatortoInterval type conversion functions"
+        "Time",
+        "Data type Time represents a time with hour, minute, and second components. It is independent of any calendar date and is suitable for values which do not need day, months and year components.",
+        "Syntax:",
+        "Time",
+        "Text representation range: [-999:59:59, 999:59:59].\n\nResolution: 1 second.",
+        "Implementation details\u200b",
+        "Representation and Performance. Data type Time internally stores a signed 32-bit integer that encodes the seconds. Values of type Time and DateTime have the same byte size and thus comparable performance.",
+        "Normalization. When parsing strings to Time, the time components are normalized and not validated. For example, 25:70:70 is interpreted as 26:11:10.",
+        "Negative values. Leading minus signs are supported and preserved. Negative values typically arise from arithmetic operations on Time values. For Time type, negative inputs are preserved for both text (e.g., '-01:02:03') and numeric inputs (e.g., -3723).",
+        "Saturation. The time-of-day component is capped to the range [-999:59:59, 999:59:59]. Values with hours beyond 999 (or below -999) are represented and round-tripped via text as 999:59:59 (or -999:59:59).",
+        "Time zones. Time does not support time zones, i.e. Time value are interpreted without regional context. Specifying a time zone for Time as a type parameter or during value creation throws an error. Likewise, attempts to apply or change the time zone on Time columns are not supported and result in an error. Time values are not silently reinterpreted under different time zones."
     ],
     "Examples": [
-        "SELECT toTypeName(INTERVAL 4 DAY)",
-        "SELECT now() as current_date_time, current_date_time + INTERVAL 4 DAY",
-        "SELECT now() AS current_date_time, current_date_time + (INTERVAL 4 DAY + INTERVAL 3 HOUR)",
-        "SELECT toIntervalMicrosecond(3600000000) = toIntervalHour(1);"
+        "CREATE TABLE tab\n(\n    `event_id` UInt8,\n    `time` Time\n)\nENGINE = TinyLog;",
+        "-- Parse Time\n-- - from string,\n-- - from integer interpreted as number of seconds since 00:00:00.\nINSERT INTO tab VALUES (1, '14:30:25'), (2, 52225);\n\nSELECT * FROM tab ORDER BY event_id;",
+        "SELECT * FROM tab WHERE time = toTime('14:30:25')",
+        "SELECT * FROM tab WHERE time = '14:30:25'",
+        "SELECT CAST('14:30:25' AS Time) AS column, toTypeName(column) AS type"
     ],
     "Category": [
-        "Interval"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [
-        "SELECT toIntervalMicrosecond(3600000000) = toIntervalHour(1);"
+        "SELECT CAST('14:30:25' AS Time) AS column, toTypeName(column) AS type"
     ]
 }

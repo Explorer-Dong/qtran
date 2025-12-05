@@ -55,7 +55,7 @@
         "SELECT NOW(), NOW()+0, NOW(3)+0;\n"
     ],
     "Category": [
-        "\u65e5\u671f\u548c\u65f6\u95f4\u7c7b\u578b"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [
         "SELECT CURTIME(), CURTIME()+0, CURTIME(3)+0;",

@@ -67,7 +67,7 @@
         "INSERT INTO t_enum_nullable Values('hello'),('world'),(NULL)"
     ],
     "Category": [
-        "Enum"
+        "String Data Types"
     ],
     "EffectiveSQLsRefined": []
 }

@@ -1,0 +1,29 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/timestamp"
+    ],
+    "Title": [
+        "Timestamp Types"
+    ],
+    "Feature": [
+        "TIMESTAMPTZ"
+    ],
+    "Description": [
+        "name: TIMESTAMPTZ; Aliases: TIMESTAMP WITH TIME ZONE; Description: Time zone aware timestamp with microsecond precision;"
+    ],
+    "Examples": [
+        "SELECT TIMESTAMPTZ '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMPTZ '1992-09-20 12:30:00.123456789+01:00';"
+    ],
+    "Category": [
+        "Date and Time Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMPTZ '1992-09-20 11:30:00.123456789';",
+        "SELECT TIMESTAMPTZ '1992-09-20 12:30:00.123456789+01:00';"
+    ]
+}

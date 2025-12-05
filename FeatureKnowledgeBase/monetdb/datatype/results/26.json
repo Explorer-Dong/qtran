@@ -3,51 +3,43 @@
         "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
     ],
     "Title": [
-        ""
+        "TIMESTAMP ( Prec )"
     ],
     "Feature": [
-        ""
+        "TIMESTAMP ( Prec )"
     ],
     "Description": [
         "",
-        ""
+        "combination of date and time including fractions of a seconds. Prec defines the number of fraction digits between 0 and 6"
     ],
     "Examples": [],
     "Category": [
-        "Base Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT * FROM feature WHERE description = ''",
-        "SELECT * FROM information_schema.tables WHERE table_name = ''",
-        "SELECT ''"
+        "SELECT CURRENT_TIMESTAMP(3);",
+        "SELECT CURRENT_TIMESTAMP;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 252,
-            "Prompt Tokens": 231,
-            "Completion Tokens": 21,
-            "Total Cost (USD)": 4.725e-05
+            "Total Tokens": 295,
+            "Prompt Tokens": 276,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 5.2799999999999996e-05
         },
         {
-            "Total Tokens": 403,
-            "Prompt Tokens": 379,
-            "Completion Tokens": 24,
-            "Total Cost (USD)": 7.125e-05
-        },
-        {
-            "Total Tokens": 546,
-            "Prompt Tokens": 531,
-            "Completion Tokens": 15,
-            "Total Cost (USD)": 8.865e-05
+            "Total Tokens": 452,
+            "Prompt Tokens": 436,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.5e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
-        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'feature'\n\n",
-        "(pymonetdb.exceptions.OperationalError) 3F000!SELECT: no such schema 'information_schema'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlINT, expecting ')' in: \"select current_timestamp(3\"\n\n",
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT ''"
+        "SELECT CURRENT_TIMESTAMP;"
     ]
 }

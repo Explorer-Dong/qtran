@@ -1,0 +1,38 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/char.html"
+    ],
+    "Title": [
+        "13.3.2 The CHAR and VARCHAR Types"
+    ],
+    "Feature": [
+        "[NATIONAL] CHAR[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]"
+    ],
+    "Description": [
+        "A fixed-length string that is always right-padded with spaces to the specified length when stored. M represents the column length in characters. The range of M is 0 to 255. If M is omitted, the length is 1.",
+        "Note",
+        "Trailing spaces are removed when CHAR values are retrieved unless the PAD_CHAR_TO_FULL_LENGTH SQL mode is enabled.",
+        "CHAR is shorthand for CHARACTER. NATIONAL CHAR (or its equivalent short form, NCHAR) is the standard SQL way to define that a CHAR column should use some predefined character set. MySQL uses utf8mb3 as this predefined character set. Section 12.3.7, “The National Character Set”.",
+        "The CHAR BYTE data type is an alias for the BINARY data type. This is a compatibility feature.",
+        "MySQL permits you to create a column of type CHAR(0). This is useful primarily when you must be compliant with old applications that depend on the existence of a column but that do not actually use its value. CHAR(0) is also quite nice when you need a column that can take only two values: A column that is defined as CHAR(0) NULL occupies only one bit and can take only the values NULL and '' (the empty string)."
+    ],
+    "Examples": [
+        "mysql> CREATE TABLE vc (v VARCHAR(4), c CHAR(4));\nQuery OK, 0 rows affected (0.01 sec)\n\nmysql> INSERT INTO vc VALUES ('ab  ', 'ab  ');\nQuery OK, 1 row affected (0.00 sec)\n\nmysql> SELECT CONCAT('(', v, ')'), CONCAT('(', c, ')') FROM vc;\n+---------------------+---------------------+\n| CONCAT('(', v, ')') | CONCAT('(', c, ')') |\n+---------------------+---------------------+\n| (ab  )              | (ab)                |\n+---------------------+---------------------+\n1 row in set (0.06 sec)"
+    ],
+    "Category": [
+        "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [
+        "CREATE TABLE vc (v VARCHAR(4), c CHAR(4));",
+        "INSERT INTO vc VALUES ('ab  ', 'ab  ');",
+        "SELECT CONCAT('(', v, ')'), CONCAT('(', c, ')') FROM vc;"
+    ],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE vc (v VARCHAR(4), c CHAR(4));",
+        "INSERT INTO vc VALUES ('ab  ', 'ab  ');",
+        "SELECT CONCAT('(', v, ')'), CONCAT('(', c, ')') FROM vc;"
+    ]
+}

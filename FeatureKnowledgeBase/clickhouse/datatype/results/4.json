@@ -34,7 +34,7 @@
         "SELECT * FROM FixedStringTableWHERE a = 'b\\0'"
     ],
     "Category": [
-        "FixedString(N)"
+        "String Data Types"
     ],
     "EffectiveSQLsRefined": []
 }

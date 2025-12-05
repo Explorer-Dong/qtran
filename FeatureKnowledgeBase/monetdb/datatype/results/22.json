@@ -3,51 +3,43 @@
         "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
     ],
     "Title": [
-        ""
+        "TIME ( Prec )"
     ],
     "Feature": [
-        ""
+        "TIME ( Prec )"
     ],
     "Description": [
         "",
-        ""
+        "time of day including fractions of a seconds (HH:MI:SS.ffffff). Prec defines the number of fraction digits between 0 and 6"
     ],
     "Examples": [],
     "Category": [
-        "Base Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT * FROM feature WHERE description = ''",
-        "SELECT * FROM information_schema.tables WHERE table_name = 'feature'",
-        "SELECT 1"
+        "SELECT TIME('12:34:56.789012')",
+        "SELECT TIME '12:34:56.789012'"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 252,
-            "Prompt Tokens": 231,
-            "Completion Tokens": 21,
-            "Total Cost (USD)": 4.725e-05
-        },
-        {
-            "Total Tokens": 404,
-            "Prompt Tokens": 379,
+            "Total Tokens": 302,
+            "Prompt Tokens": 277,
             "Completion Tokens": 25,
-            "Total Cost (USD)": 7.184999999999998e-05
+            "Total Cost (USD)": 5.655e-05
         },
         {
-            "Total Tokens": 548,
-            "Prompt Tokens": 532,
-            "Completion Tokens": 16,
-            "Total Cost (USD)": 8.94e-05
+            "Total Tokens": 475,
+            "Prompt Tokens": 451,
+            "Completion Tokens": 24,
+            "Total Cost (USD)": 8.204999999999999e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
-        "(pymonetdb.exceptions.OperationalError) 42S02!SELECT: no such table 'feature'\n\n",
-        "(pymonetdb.exceptions.OperationalError) 3F000!SELECT: no such schema 'information_schema'\n\n",
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected STRING, expecting IDENT or sqlINT in: \"select time('12:34:56.789012'\"\n\n",
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT 1"
+        "SELECT TIME '12:34:56.789012'"
     ]
 }

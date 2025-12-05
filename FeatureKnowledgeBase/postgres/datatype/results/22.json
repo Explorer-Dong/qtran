@@ -1,45 +1,39 @@
 {
     "HTML": [
-        "https://www.postgresql.org/docs/16/datatype-datetime.html"
+        "https://www.postgresql.org/docs/16/datatype-boolean.html"
     ],
     "Title": [
-        "time [ (p) ] with time zone"
+        "boolean"
     ],
     "Feature": [
-        "time [ (p) ] with time zone"
+        "boolean"
     ],
     "Description": [
         "Storage Size",
-        "12 bytes",
+        "1 byte",
         "Description",
-        "time of day (no date), with time zone",
-        "Low Value",
-        "00:00:00+1559",
-        "High Value",
-        "24:00:00-1559",
-        "Resolution",
-        "1 microsecond"
+        "state of true or false"
     ],
     "Examples": [],
     "Category": [
-        "Date divide Time Types"
+        "Numeric Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT '12:00:00+00'::time with time zone;"
+        "SELECT TRUE;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 348,
-            "Prompt Tokens": 320,
-            "Completion Tokens": 28,
-            "Total Cost (USD)": 6.479999999999999e-05
+            "Total Tokens": 262,
+            "Prompt Tokens": 247,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 4.6049999999999994e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT '12:00:00+00'::time with time zone;"
+        "SELECT TRUE;"
     ]
 }

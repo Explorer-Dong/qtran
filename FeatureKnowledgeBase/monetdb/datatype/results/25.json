@@ -3,35 +3,43 @@
         "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
     ],
     "Title": [
-        "FLOAT ( Prec )"
+        "TIMESTAMP"
     ],
     "Feature": [
-        "FLOAT ( Prec )"
+        "TIMESTAMP"
     ],
     "Description": [
-        "",
-        "32 or 64 bit signed floating point approximate number with binary (radix 2) precision Prec. Prec must be between 1 and 53. FLOAT(24) is same as REAL, FLOAT(53) is same as DOUBLE PRECISION"
+        "TIMESTAMP(6)",
+        "combination of a date and time(6)"
     ],
     "Examples": [],
     "Category": [
-        "Base Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT CAST(3.14 AS FLOAT(24));"
+        "SELECT CURRENT_TIMESTAMP(6);",
+        "SELECT CURRENT_TIMESTAMP;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 321,
-            "Prompt Tokens": 297,
-            "Completion Tokens": 24,
-            "Total Cost (USD)": 5.894999999999999e-05
+            "Total Tokens": 272,
+            "Prompt Tokens": 253,
+            "Completion Tokens": 19,
+            "Total Cost (USD)": 4.934999999999999e-05
+        },
+        {
+            "Total Tokens": 426,
+            "Prompt Tokens": 410,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 7.11e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
+        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected sqlINT, expecting ')' in: \"select current_timestamp(6\"\n\n",
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT CAST(3.14 AS FLOAT(24));"
+        "SELECT CURRENT_TIMESTAMP;"
     ]
 }

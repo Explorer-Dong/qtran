@@ -3,43 +3,43 @@
         "https://www.postgresql.org/docs/16/datatype-datetime.html"
     ],
     "Title": [
-        "timestamp [ (p) ] [ without time zone ]"
+        "date"
     ],
     "Feature": [
-        "timestamp [ (p) ] [ without time zone ]"
+        "date"
     ],
     "Description": [
         "Storage Size",
-        "8 bytes",
+        "4 bytes",
         "Description",
-        "both date and time (no time zone)",
+        "date (no time of day)",
         "Low Value",
         "4713 BC",
         "High Value",
-        "294276 AD",
+        "5874897 AD",
         "Resolution",
-        "1 microsecond"
+        "1 day"
     ],
     "Examples": [],
     "Category": [
-        "Date divide Time Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT NOW()::timestamp;"
+        "SELECT CURRENT_DATE;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 334,
-            "Prompt Tokens": 316,
-            "Completion Tokens": 18,
-            "Total Cost (USD)": 5.819999999999999e-05
+            "Total Tokens": 290,
+            "Prompt Tokens": 274,
+            "Completion Tokens": 16,
+            "Total Cost (USD)": 5.07e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT NOW()::timestamp;"
+        "SELECT CURRENT_DATE;"
     ]
 }

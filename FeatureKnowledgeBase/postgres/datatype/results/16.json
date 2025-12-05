@@ -1,39 +1,45 @@
 {
     "HTML": [
-        "https://www.postgresql.org/docs/16/datatype-character.html"
+        "https://www.postgresql.org/docs/16/datatype-datetime.html"
     ],
     "Title": [
-        "name"
+        "timestamp [ (p) ] [ without time zone ]"
     ],
     "Feature": [
-        "name"
+        "timestamp [ (p) ] [ without time zone ]"
     ],
     "Description": [
         "Storage Size",
-        "64 bytes",
+        "8 bytes",
         "Description",
-        "internal type for object names"
+        "both date and time (no time zone)",
+        "Low Value",
+        "4713 BC",
+        "High Value",
+        "294276 AD",
+        "Resolution",
+        "1 microsecond"
     ],
     "Examples": [],
     "Category": [
-        "Character Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT 'name';"
+        "SELECT NOW()::timestamp;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 264,
-            "Prompt Tokens": 247,
-            "Completion Tokens": 17,
-            "Total Cost (USD)": 4.7249999999999997e-05
+            "Total Tokens": 334,
+            "Prompt Tokens": 316,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 5.819999999999999e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT 'name';"
+        "SELECT NOW()::timestamp;"
     ]
 }

@@ -1,44 +1,36 @@
 {
     "HTML": [
-        "https://dev.mysql.com/doc/refman/8.0/en/integer-types.html"
+        "https://dev.mysql.com/doc/refman/8.0/en/bit-type.html"
     ],
     "Title": [
-        "13.1.2 Integer Types (Exact Value) - INTEGER, INT, SMALLINT, TINYINT,\nMEDIUMINT, BIGINT"
+        "13.1.5 Bit-Value Type - BIT"
     ],
     "Feature": [
-        "13.1.2 Integer Types (Exact Value) - INTEGER, INT, SMALLINT, TINYINT,\nMEDIUMINT, BIGINT"
+        "BIT"
     ],
     "Description": [
-        "\n\n\n\n13.1.2\u00a0Integer Types (Exact Value) - INTEGER, INT, SMALLINT, TINYINT,\nMEDIUMINT, BIGINT\n\n\n\n\n        MySQL supports the SQL standard integer types\n        INTEGER (or INT) and\n        SMALLINT. As an extension to the standard,\n        MySQL also supports the integer types\n        TINYINT, MEDIUMINT, and\n        BIGINT. The following table shows the\n        required storage and range for each integer type.\n\n\nTable\u00a013.1\u00a0Required Storage and Range for Integer Types Supported by MySQL\n\n\nType\nStorage (Bytes)\nMinimum Value Signed\nMinimum Value Unsigned\nMaximum Value Signed\nMaximum Value Unsigned\n\nTINYINT\n1\n-128\n0\n127\n255\n\nSMALLINT\n2\n-32768\n0\n32767\n65535\n\nMEDIUMINT\n3\n-8388608\n0\n8388607\n16777215\n\nINT\n4\n-2147483648\n0\n2147483647\n4294967295\n\nBIGINT\n8\n-263\n0\n263-1\n264-1\n\n\n\n\n"
+        "\n\n\n\n13.1.5\u00a0Bit-Value Type - BIT\n\n\n\n\n        The BIT data type is used to store bit\n        values. A type of\n        BIT(M) enables\n        storage of M-bit values.\n        M can range from 1 to 64.\n      \n        To specify bit values,\n        b'value' notation\n        can be used. value is a binary value\n        written using zeros and ones. For example,\n        b'111' and b'10000000'\n        represent 7 and 128, respectively. See\n        Section\u00a011.1.5, \u201cBit-Value Literals\u201d.\n      \n        If you assign a value to a\n        BIT(M) column that\n        is less than M bits long, the value\n        is padded on the left with zeros. For example, assigning a value\n        of b'101' to a BIT(6)\n        column is, in effect, the same as assigning\n        b'000101'.\n      NDB Cluster.\u00a0\n          The maximum combined size of all BIT\n          columns used in a given NDB table\n          must not exceed 4096 bits.\n\n"
     ],
     "Examples": [],
     "Category": [
-        "Integer Types (Exact Value) - INTEGER, INT, SMALLINT, TINYINT, MEDIUMINT, BIGINT"
+        "Numeric Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT CAST(123 AS INTEGER);",
-        "SELECT CAST(123 AS SIGNED);"
+        "SELECT b'101' AS bit_value;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 631,
-            "Prompt Tokens": 611,
-            "Completion Tokens": 20,
-            "Total Cost (USD)": 0.00010364999999999999
-        },
-        {
-            "Total Tokens": 833,
-            "Prompt Tokens": 812,
+            "Total Tokens": 557,
+            "Prompt Tokens": 536,
             "Completion Tokens": 21,
-            "Total Cost (USD)": 0.0001344
+            "Total Cost (USD)": 9.3e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
-        "(pymysql.err.ProgrammingError) (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INTEGER)' at line 1\")\n",
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT CAST(123 AS SIGNED);"
+        "SELECT b'101' AS bit_value;"
     ]
 }

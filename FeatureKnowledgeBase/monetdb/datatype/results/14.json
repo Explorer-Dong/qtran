@@ -3,35 +3,35 @@
         "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
     ],
     "Title": [
-        "INTEGER"
+        "DECIMAL"
     ],
     "Feature": [
-        "INTEGER"
+        "DECIMAL"
     ],
     "Description": [
-        "INT, MEDIUMINT",
-        "32 bit signed integer between -2147483647 and 2147483647"
+        "DEC, NUMERIC",
+        "Exact signed decimal number with precision 18 and scale 3"
     ],
     "Examples": [],
     "Category": [
-        "Base Types"
+        "Numeric Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT 42;"
+        "SELECT CAST(123.456 AS DECIMAL(18, 3));"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 272,
-            "Prompt Tokens": 256,
-            "Completion Tokens": 16,
-            "Total Cost (USD)": 4.8e-05
+            "Total Tokens": 283,
+            "Prompt Tokens": 255,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 5.5049999999999996e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT 42;"
+        "SELECT CAST(123.456 AS DECIMAL(18, 3));"
     ]
 }

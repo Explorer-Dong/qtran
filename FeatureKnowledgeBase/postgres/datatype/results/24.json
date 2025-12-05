@@ -1,39 +1,41 @@
 {
     "HTML": [
-        "https://www.postgresql.org/docs/16/datatype-boolean.html"
+        "https://www.postgresql.org/docs/16/datatype-geometric.html"
     ],
     "Title": [
-        "boolean"
+        "point"
     ],
     "Feature": [
-        "boolean"
+        "point"
     ],
     "Description": [
         "Storage Size",
-        "1 byte",
+        "16 bytes",
         "Description",
-        "state of true or false"
+        "Point on a plane",
+        "Representation",
+        "(x,y)"
     ],
     "Examples": [],
     "Category": [
-        "Boolean Type"
+        "Spatial Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT TRUE;"
+        "SELECT point '(1,2)';"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 262,
-            "Prompt Tokens": 247,
-            "Completion Tokens": 15,
-            "Total Cost (USD)": 4.6049999999999994e-05
+            "Total Tokens": 275,
+            "Prompt Tokens": 254,
+            "Completion Tokens": 21,
+            "Total Cost (USD)": 5.07e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT TRUE;"
+        "SELECT point '(1,2)';"
     ]
 }

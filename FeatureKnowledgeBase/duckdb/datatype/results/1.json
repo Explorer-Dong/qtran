@@ -33,7 +33,7 @@
         "SELECT 123::BITSTRING AS b;\n"
     ],
     "Category": [
-        "Bitstring"
+        "Numeric Data Types"
     ],
     "EffectiveSQLsRefined": [
         "SELECT '101010'::BITSTRING AS b;",

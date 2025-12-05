@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/text"
+    ],
+    "Title": [
+        "Text Types"
+    ],
+    "Feature": [
+        "VARCHAR"
+    ],
+    "Description": [
+        "name: VARCHAR; Aliases: CHAR, BPCHAR, STRING, TEXT; Description: Variable-length character string;;"
+    ],
+    "Examples": [
+        "CREATE TABLE strings (\n    val VARCHAR CHECK (length(val) <= 10) -- val has a maximum length of 10\n);"
+    ],
+    "Category": [
+        "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE strings (\n    val VARCHAR CHECK (length(val) <= 10) -- val has a maximum length of 10\n);"
+    ]
+}

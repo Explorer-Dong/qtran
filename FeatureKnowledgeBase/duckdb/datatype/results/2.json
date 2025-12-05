@@ -29,7 +29,7 @@
         "SELECT 'AB'::BLOB;\n"
     ],
     "Category": [
-        "Blob"
+        "String Data Types"
     ],
     "EffectiveSQLsRefined": [
         "SELECT '\\xAA'::BLOB;",

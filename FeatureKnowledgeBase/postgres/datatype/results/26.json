@@ -3,39 +3,39 @@
         "https://www.postgresql.org/docs/16/datatype-geometric.html"
     ],
     "Title": [
-        "point"
+        "lseg"
     ],
     "Feature": [
-        "point"
+        "lseg"
     ],
     "Description": [
         "Storage Size",
-        "16 bytes",
+        "32 bytes",
         "Description",
-        "Point on a plane",
+        "Finite line segment",
         "Representation",
-        "(x,y)"
+        "((x1,y1),(x2,y2))"
     ],
     "Examples": [],
     "Category": [
-        "Geometric Types"
+        "Spatial Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT point '(1,2)';"
+        "SELECT lseg '((1,2),(3,4))';"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 275,
-            "Prompt Tokens": 254,
-            "Completion Tokens": 21,
-            "Total Cost (USD)": 5.07e-05
+            "Total Tokens": 292,
+            "Prompt Tokens": 265,
+            "Completion Tokens": 27,
+            "Total Cost (USD)": 5.594999999999999e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT point '(1,2)';"
+        "SELECT lseg '((1,2),(3,4))';"
     ]
 }

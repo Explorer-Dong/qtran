@@ -3,35 +3,36 @@
         "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
     ],
     "Title": [
-        "DECIMAL ( Prec )"
+        "DATE"
     ],
     "Feature": [
-        "DECIMAL ( Prec )"
+        "DATE"
     ],
     "Description": [
-        "DEC ( Prec ), NUMERIC ( Prec )",
-        "Exact signed decimal number with the specified precision Prec and scale 0. Prec must be between 1 and 18 (or 38 when HUGEINT is also supported)"
+        "date",
+        "4-bytes",
+        "a date in the Gregorian calendar YYYY-MM-DD, e.g. 1999-12-31"
     ],
     "Examples": [],
     "Category": [
-        "Base Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT CAST(123.45 AS DECIMAL(5));"
+        "SELECT DATE '2023-10-01';"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 319,
-            "Prompt Tokens": 294,
-            "Completion Tokens": 25,
-            "Total Cost (USD)": 5.909999999999999e-05
+            "Total Tokens": 284,
+            "Prompt Tokens": 261,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.294999999999999e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT CAST(123.45 AS DECIMAL(5));"
+        "SELECT DATE '2023-10-01';"
     ]
 }

@@ -37,7 +37,7 @@
         "SELECT toIPv4('127.0.0.1') = toIPv6('::ffff:127.0.0.1');"
     ],
     "Category": [
-        "IPv4"
+        "Network Data Types"
     ],
     "EffectiveSQLsRefined": [
         "CREATE TABLE hits (url String, from IPv4) ENGINE = MergeTree() ORDER BY url;",

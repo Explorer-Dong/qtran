@@ -1,0 +1,32 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.4/en/gis-class-polygon.html"
+    ],
+    "Title": [
+        "13.4.2.7 Polygon Class"
+    ],
+    "Feature": [
+        "Polygon"
+    ],
+    "Description": [
+        "A Polygon is a planar Surface representing a multisided geometry. It is defined by a single exterior boundary and zero or more interior boundaries, where each interior boundary defines a hole in the Polygon.",
+        "Polygon Examples",
+        "On a region map, Polygon objects could represent forests, districts, and so on.",
+        "Polygon Assertions",
+        "The boundary of a Polygon consists of a set of LinearRing objects (that is, LineString objects that are both simple and closed) that make up its exterior and interior boundaries.",
+        "A Polygon has no rings that cross. The rings in the boundary of a Polygon may intersect at a Point, but only as a tangent.",
+        "A Polygon has no lines, spikes, or punctures.",
+        "A Polygon has an interior that is a connected point set.",
+        "A Polygon may have holes. The exterior of a Polygon with holes is not connected. Each hole defines a connected component of the exterior.",
+        "The preceding assertions make a Polygon a simple geometry."
+    ],
+    "Examples": [],
+    "Category": [
+        "Spatial Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": []
+}

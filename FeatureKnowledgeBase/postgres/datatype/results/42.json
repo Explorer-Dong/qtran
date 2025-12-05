@@ -6,7 +6,7 @@
         "8.15. Arrays"
     ],
     "Feature": [
-        "8.15. Arrays"
+        "Arrays"
     ],
     "Description": [
         "\n\n\n8.15.\u00a0Arrays #\n\n\n",
@@ -21,7 +21,7 @@
     ],
     "Examples": [],
     "Category": [
-        "Arrays"
+        "Nested or Composite Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [

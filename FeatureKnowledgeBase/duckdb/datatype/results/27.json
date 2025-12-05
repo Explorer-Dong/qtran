@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/timestamp"
+    ],
+    "Title": [
+        "Timestamp Types"
+    ],
+    "Feature": [
+        "TIMESTAMP_NS"
+    ],
+    "Description": [
+        "name: TIMESTAMP_NS; Aliases: ; Description: Naive timestamp with nanosecond precision;\n"
+    ],
+    "Examples": [
+        "SELECT TIMESTAMP_NS '1992-09-20 11:30:00.123456789';"
+    ],
+    "Category": [
+        "Date and Time Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIMESTAMP_NS '1992-09-20 11:30:00.123456789';"
+    ]
+}

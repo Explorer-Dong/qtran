@@ -49,7 +49,7 @@
         "SELECTtoDateTime64(timestamp, 3, 'Europe/London') as lon_time,toDateTime64(timestamp, 3, 'Asia/Istanbul') as istanbul_timeFROM dt64;"
     ],
     "Category": [
-        "DateTime64"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [
         "CREATE TABLE dt64(    `timestamp` DateTime64(3, 'Asia/Istanbul'),    `event_id` UInt8)ENGINE = TinyLog;",

@@ -1,0 +1,27 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/time"
+    ],
+    "Title": [
+        "Time Types"
+    ],
+    "Feature": [
+        "TIME_NS"
+    ],
+    "Description": [
+        "name: TIME_NS; Aliases: ; Description: Time of day, nanosecond precision;"
+    ],
+    "Examples": [
+        "SELECT '15:30:00.123456789'::TIME_NS;"
+    ],
+    "Category": [
+        "Date and Time Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT '15:30:00.123456789'::TIME_NS;"
+    ]
+}

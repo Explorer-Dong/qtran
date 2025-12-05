@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/blob.html"
+    ],
+    "Title": [
+        "13.3.4 The BLOB and TEXT Types"
+    ],
+    "Feature": [
+        "LONGBLOB"
+    ],
+    "Description": [
+        "A BLOB column with a maximum length of 4,294,967,295 or 4GB (232 − 1) bytes. The effective maximum length of LONGBLOB columns depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGBLOB value is stored using a 4-byte length prefix that indicates the number of bytes in the value."
+    ],
+    "Examples": [],
+    "Category": [
+        "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": []
+}

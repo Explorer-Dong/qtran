@@ -58,7 +58,7 @@
         "SELECT element_at(MAP {'key1': 5, 'key2': 43}, 'key1');\n"
     ],
     "Category": [
-        "Map"
+        "Nested or Composite Data Types"
     ],
     "EffectiveSQLsRefined": [
         "SELECT MAP {'key1': 10, 'key2': 20, 'key3': 30};",

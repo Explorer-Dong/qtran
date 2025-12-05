@@ -3,47 +3,55 @@
         "https://www.postgresql.org/docs/16/datatype-geometric.html"
     ],
     "Title": [
-        "box"
+        "path"
     ],
     "Feature": [
-        "box"
+        "path"
     ],
     "Description": [
         "Storage Size",
-        "32 bytes",
+        "16+16n bytes",
         "Description",
-        "Rectangular box",
+        "Open path",
         "Representation",
-        "((x1,y1),(x2,y2))"
+        "[(x1,y1),...]"
     ],
     "Examples": [],
     "Category": [
-        "Geometric Types"
+        "Spatial Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT * FROM box;",
-        "SELECT 'box' AS item;"
+        "SELECT path FROM my_table;",
+        "SELECT path;",
+        "SELECT * FROM (VALUES (NULL)) AS temp(path);"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 278,
-            "Prompt Tokens": 261,
-            "Completion Tokens": 17,
-            "Total Cost (USD)": 4.934999999999999e-05
+            "Total Tokens": 277,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 18,
+            "Total Cost (USD)": 4.9649999999999994e-05
         },
         {
-            "Total Tokens": 432,
-            "Prompt Tokens": 413,
-            "Completion Tokens": 19,
-            "Total Cost (USD)": 7.335e-05
+            "Total Tokens": 429,
+            "Prompt Tokens": 414,
+            "Completion Tokens": 15,
+            "Total Cost (USD)": 7.11e-05
+        },
+        {
+            "Total Tokens": 587,
+            "Prompt Tokens": 562,
+            "Completion Tokens": 25,
+            "Total Cost (USD)": 9.93e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
-        "(psycopg2.errors.UndefinedTable) relation \"box\" does not exist\nLINE 1: SELECT * FROM box;\n                      ^\n\n",
+        "(psycopg2.errors.UndefinedTable) relation \"my_table\" does not exist\nLINE 1: SELECT path FROM my_table;\n                         ^\n\n",
+        "(psycopg2.errors.UndefinedColumn) column \"path\" does not exist\nLINE 1: SELECT path;\n               ^\n\n",
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT 'box' AS item;"
+        "SELECT * FROM (VALUES (NULL)) AS temp(path);"
     ]
 }

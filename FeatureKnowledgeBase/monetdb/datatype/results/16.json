@@ -3,43 +3,35 @@
         "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
     ],
     "Title": [
-        "HUGEINT"
+        "DECIMAL ( Prec , Scale )"
     ],
     "Feature": [
-        "HUGEINT"
+        "DECIMAL ( Prec , Scale )"
     ],
     "Description": [
-        "",
-        "128 bit signed integer between -2^127 +1 and +2^127 -1 (\u00b1170141183460469231731687303715884105727)"
+        "DEC ( Prec , Scale ), NUMERIC ( Prec , Scale )",
+        "Exact signed decimal number with specified precision Prec and scale Scale. Prec must be between 1 and 18 (or 38 when HUGEINT is also supported). Scale must be between 0 and Prec"
     ],
     "Examples": [],
     "Category": [
-        "Base Types"
+        "Numeric Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT HUGEINT FROM my_table;",
-        "SELECT CAST(123456789012345678901234567890 AS HUGEINT);"
+        "SELECT CAST(123.45 AS DECIMAL(5, 2));"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 296,
-            "Prompt Tokens": 277,
-            "Completion Tokens": 19,
-            "Total Cost (USD)": 5.295e-05
-        },
-        {
-            "Total Tokens": 460,
-            "Prompt Tokens": 430,
-            "Completion Tokens": 30,
-            "Total Cost (USD)": 8.25e-05
+            "Total Tokens": 340,
+            "Prompt Tokens": 312,
+            "Completion Tokens": 28,
+            "Total Cost (USD)": 6.36e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
-        "(pymonetdb.exceptions.OperationalError) 42000!syntax error, unexpected HUGEINT in: \"select hugeint\"\n\n",
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT CAST(123456789012345678901234567890 AS HUGEINT);"
+        "SELECT CAST(123.45 AS DECIMAL(5, 2));"
     ]
 }

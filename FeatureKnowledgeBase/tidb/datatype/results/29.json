@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://docs.pingcap.com/zh/tidb/stable/data-type-json/"
+    ],
+    "Title": [
+        "JSON 数据类型"
+    ],
+    "Feature": [
+        "JSON"
+    ],
+    "Description": [
+        "JSON 类型可以存储 JSON 这种半结构化的数据，相比于直接将 JSON 存储为字符串，它的好处在于：\n\n使用 Binary 格式进行序列化，对 JSON 的内部字段的查询、解析加快；\n多了 JSON 合法性验证的步骤，只有合法的 JSON 文档才可以放入这个字段中；\nJSON 字段本身上，并不能创建索引，但是可以对 JSON 文档中的某个子字段创建索引。例如：\n\nCREATE TABLE city (\n    id INT PRIMARY KEY,\n    detail JSON,\n    population INT AS (JSON_EXTRACT(detail, '$.population')),\n    index index_name (population)\n);\nINSERT INTO city (id,detail) VALUES (1, '{\"name\": \"Beijing\", \"population\": 100}');\nSELECT id FROM city WHERE population >= 100;"
+    ],
+    "Examples": [
+        "CREATE TABLE city (\n    id INT PRIMARY KEY,\n    detail JSON,\n    population INT AS (JSON_EXTRACT(detail, '$.population')),\n    index index_name (population)\n);",
+        "INSERT INTO city (id,detail) VALUES (1, '{\"name\": \"Beijing\", \"population\": 100}');",
+        "SELECT id FROM city WHERE population >= 100;"
+    ],
+    "Category": [
+        "JSON Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "CREATE TABLE city (\n    id INT PRIMARY KEY,\n    detail JSON,\n    population INT AS (JSON_EXTRACT(detail, '$.population')),\n    index index_name (population)\n);",
+        "INSERT INTO city (id,detail) VALUES (1, '{\"name\": \"Beijing\", \"population\": 100}');",
+        "SELECT id FROM city WHERE population >= 100;"
+    ]
+}

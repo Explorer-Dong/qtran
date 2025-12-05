@@ -1,0 +1,23 @@
+{
+    "HTML": [
+        "https://dev.mysql.com/doc/refman/8.0/en/blob.html"
+    ],
+    "Title": [
+        "13.3.4 The BLOB and TEXT Types"
+    ],
+    "Feature": [
+        "TINYBLOB"
+    ],
+    "Description": [
+        "A BLOB column with a maximum length of 255 (28 − 1) bytes. Each TINYBLOB value is stored using a 1-byte length prefix that indicates the number of bytes in the value."
+    ],
+    "Examples": [],
+    "Category": [
+        "String Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": []
+}

@@ -3,10 +3,10 @@
         "https://clickhouse.com/docs/en/sql-reference/data-types/float"
     ],
     "Title": [
-        "Float32, Float64"
+        "Float32, Float64, BFloat16"
     ],
     "Feature": [
-        "Float32, Float64"
+        "Float32, Float64, BFloat16"
     ],
     "Description": [
         "Float32, Float64",
@@ -32,7 +32,8 @@
         "NaN \u2014 Not a number.",
         "SELECT 0 / 0",
         "\u250c\u2500divide(0, 0)\u2500\u2510\u2502          nan \u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
-        "See the rules for NaN sorting in the section ORDER BY clause."
+        "See the rules for NaN sorting in the section ORDER BY clause.",
+        "BFloat16\nBFloat16 is a 16-bit floating point data type with 8-bit exponent, sign, and 7-bit mantissa. It is useful for machine learning and AI applications.\n\nClickHouse supports conversions between Float32 and BFloat16 which can be done using the toFloat32() or toBFloat16 functions."
     ],
     "Examples": [
         "CREATE TABLE IF NOT EXISTS float_vs_decimal(   my_float Float64,   my_decimal Decimal64(3))Engine=MergeTreeORDER BY tuple();# Generate 1 000 000 random numbers with 2 decimal places and store them as a float and as a decimalINSERT INTO float_vs_decimal SELECT round(randCanonical(), 3) AS res, res FROM system.numbers LIMIT 1000000;",
@@ -42,7 +43,7 @@
         "SELECT 0 / 0"
     ],
     "Category": [
-        "Float32, Float64"
+        "Numeric Data Types"
     ],
     "EffectiveSQLsRefined": []
 }

@@ -3,35 +3,35 @@
         "https://www.monetdb.org/documentation-Aug2024/user-guide/sql-manual/data-types/base-types"
     ],
     "Title": [
-        "DECIMAL ( Prec , Scale )"
+        "TIME"
     ],
     "Feature": [
-        "DECIMAL ( Prec , Scale )"
+        "TIME"
     ],
     "Description": [
-        "DEC ( Prec , Scale ), NUMERIC ( Prec , Scale )",
-        "Exact signed decimal number with specified precision Prec and scale Scale. Prec must be between 1 and 18 (or 38 when HUGEINT is also supported). Scale must be between 0 and Prec"
+        "TIME(0)",
+        "time of day (HH:MI:SS) between 00:00:00 and 23:59:59"
     ],
     "Examples": [],
     "Category": [
-        "Base Types"
+        "Date and Time Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT CAST(123.45 AS DECIMAL(5, 2));"
+        "SELECT TIME '12:30:00';"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 340,
-            "Prompt Tokens": 312,
-            "Completion Tokens": 28,
-            "Total Cost (USD)": 6.36e-05
+            "Total Tokens": 284,
+            "Prompt Tokens": 262,
+            "Completion Tokens": 22,
+            "Total Cost (USD)": 5.2499999999999995e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT CAST(123.45 AS DECIMAL(5, 2));"
+        "SELECT TIME '12:30:00';"
     ]
 }

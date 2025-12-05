@@ -3,37 +3,45 @@
         "https://www.postgresql.org/docs/16/datatype-net-types.html"
     ],
     "Title": [
-        "inet"
+        "macaddr8"
     ],
     "Feature": [
-        "inet"
+        "macaddr8"
     ],
     "Description": [
         "Storage Size",
-        "7 or 19 bytes",
+        "8 bytes",
         "Description",
-        "IPv4 and IPv6 hosts and networks"
+        "MAC addresses (EUI-64 format)"
     ],
     "Examples": [],
     "Category": [
-        "Network Address Types"
+        "Network Data Types"
     ],
     "EffectiveSQLsRefined": [],
     "EffectiveSQLsGenerated": [
-        "SELECT '192.168.1.1'::inet;"
+        "SELECT 'macaddr8'::macaddr8;",
+        "SELECT '00:00:00:00:00:00:00:00'::macaddr8;"
     ],
     "EffectiveSQLsGeneratedCosts": [
         {
-            "Total Tokens": 278,
-            "Prompt Tokens": 253,
-            "Completion Tokens": 25,
-            "Total Cost (USD)": 5.294999999999999e-05
+            "Total Tokens": 282,
+            "Prompt Tokens": 259,
+            "Completion Tokens": 23,
+            "Total Cost (USD)": 5.264999999999999e-05
+        },
+        {
+            "Total Tokens": 465,
+            "Prompt Tokens": 430,
+            "Completion Tokens": 35,
+            "Total Cost (USD)": 8.549999999999999e-05
         }
     ],
     "EffectiveSQLsGeneratedErrors": [
+        "(psycopg2.errors.InvalidTextRepresentation) invalid input syntax for type macaddr8: \"macaddr8\"\nLINE 1: SELECT 'macaddr8'::macaddr8;\n               ^\n\n",
         "None"
     ],
     "EffectiveSQLs": [
-        "SELECT '192.168.1.1'::inet;"
+        "SELECT '00:00:00:00:00:00:00:00'::macaddr8;"
     ]
 }

@@ -1,0 +1,31 @@
+{
+    "HTML": [
+        "https://duckdb.org/docs/stable/sql/data_types/time"
+    ],
+    "Title": [
+        "Time Types"
+    ],
+    "Feature": [
+        "TIMETZ"
+    ],
+    "Description": [
+        "name: TIMETZ; Aliases: TIME WITH TIME ZONE; Description: Time of day, with time zone offset;\n"
+    ],
+    "Examples": [
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456-02:00';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456+05:30';"
+    ],
+    "Category": [
+        "Date and Time Data Types"
+    ],
+    "EffectiveSQLsRefined": [],
+    "EffectiveSQLsGenerated": [],
+    "EffectiveSQLsGeneratedCosts": [],
+    "EffectiveSQLsGeneratedErrors": [],
+    "EffectiveSQLs": [
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456-02:00';",
+        "SELECT TIMETZ '1992-09-20 11:30:00.123456+05:30';"
+    ]
+}

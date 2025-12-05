@@ -50,7 +50,7 @@
         "INSERT INTO t_uuid (y) VALUES ('Example 2')SELECT * FROM t_uuid"
     ],
     "Category": [
-        "UUID"
+        "UUID Data Types"
     ],
     "EffectiveSQLsRefined": [
         "CREATE TABLE tab (uuid UUID) ENGINE = Memory;",
