@@ -1,46 +1,32 @@
-# QTRAN: Extending Metamorphic-Oracle based Logical Bug Detection Techniques for Multiple-DBMS Dialect Support
+# 复现 QTRAN
 
-## Abstract
-QTRAN mitigates the dependence existing of MOLTs(Metamorphic-Oracle based Logic Bug Detection Techinique) on specific DBMS grammars and enhances their extension capabilities to new DBMSs,which can significantly improve the reliability and testing robustness of diverse DBMSs. 
+原项目地址：<https://github.com/QTRANll/QTRAN>，遵循 Apache-2.0 开源协议。
 
-QTRAN is a novel LLM-powered approach that automatically extends existing MOLTs to various DBMSs. QTRAN ensures that most of transferred SQL statement pairs are suitable for metamorphic testing and discovered 24 previously unknown logical bugs, 16 of which have been confirmed.  
-
-The workflow encompasses two key phases: transfer phase and mutation phase.
 ## Prerequisites
-### Set up Environment
-This guide will help you set up the environment for this project using Python 3.11. Follow the steps below to get started.
-1. **Python 3.11** or higher is recommended for this project.
-2. Clone the repository
-``` shell
-git clone <repository_url> 
-cd <project_directory>
-```
-3. Activate the Virtual Environment
-4. Install Dependencies
-``` shell
-pip install -r requirements.txt
-```
-### Build Databases
-Before running, ensure that the databases  have been built and configured correctly.You can follow **the instructions in [Docker_Databases](Docker_Databases.md) (mainly using Docker-Compose)** to build the databases, or you can build them or those databases by yourself. 
-**Please note that:** After the databases are successfully built, **remember to fill in the correct database configuration information into the file [database_connector_args.json](src/Tools/DatabaseConnect/database_connector_args.json)** to successfully run QTRAN.
-### LLM keys
-Before running QTRAN, please make sure you have **LLM API keys** so that QTRAN can successfully call the large model during execution.
 
-Set the `api_key` as an environment variable and check if it has been set successfully.QTRAN will use this api key to access openai.
+### 配置 Python 🤨
 
-``` shell
-SET OPENAI_API_KEY=${your_api_key}
-```
-### Fine-tune the Mutation LLM
+原论文使用的是 Python 3.11，并且使用 pip 管理，考虑转移到 uv。
 
-QTRAN has carefully constructed training datasets for fine-tuning Mutation LLM for NoREC, TLP, PINOLO, and DQE. After fine-tuning on these datasets, theMutation LLM achieve high mutation accuracy. Please use the provided training datasets and your LLM keys to fine-tune the model by following fine-tuning instructions(details in [Fine-tune_MutationLLM](Fine-tune_MutationLLM.md) ), and obtain the `Fine-tuned Model ID` for use in the QTRAN tool.
+### 配置数据库 🤨
 
-**Notes:**
-An LLM's API Key is needed for fine-tuning models. After fine-tuning a model, you still need to use the same API key to call the fine-tuned model. This means you cannot use a different API key to access the fine-tuned model.
+原论文使用了 8 个数据库，并且使用 docker compose 管理，在 [database_connector_args.json](src/Tools/DatabaseConnect/database_connector_args.json) 文件中配置。
 
-Then remember to set the `Fine-tuned Model ID` of MOLTs for Mutation Phase of QTRAN.
+具体参考 [Config Databases in Docker](./docs/config-db-in-docker.md) 中的内容。
 
-``` shell
+### 配置 LLM API Key 🤨
+
+原论文直接 `SET OPENAI_API_KEY=${your_api_key}`，可以考虑使用 `.env` 文件并修改源码。
+
+### 指令微调变异阶段的 LLM 🤨
+
+原论文在变异阶段指令微调了 GPT-4o mini，微调数据集基于 4 种 MOLT 方法 (NoREC, TLP, PINOLO, DQE) 构建。
+
+具体参考 [Fine-tune Mutation-LLM](./docs/fine-tune-mutation-llm.md) 中的内容。
+
+注意，原论文需要设置微调后的 LLM ID：
+
+```bash
 SET NOREC_MUTATION_LLM_ID = ${your_norec_mutation_llm_id}
 SET TLP_MUTATION_LLM_ID = ${your_tlp_mutation_llm_id}
 SET PINOLO_MUTATION_LLM_ID = ${your_pinolo_mutation_llm_id}
@@ -50,10 +36,12 @@ SET DQE_MUTATION_LLM_ID = ${your_dqe_mutation_llm_id}
 ## Main Process
 
 QTRAN decompose the analysis into two phases: the transfer and mutation phases. It starts with SQL statement pairs from existing MOLTs and extends these pairs to new DBMSs through the two phases.
-### Input 
+
+### Input
 
 The input file for QTRAN is a JSONL file in the dictionary `Input` , where each line contains a piece of test data in JSON format. Each test data is from existing MOLTs and follows the format shown below. This test data is intended for QTRAN to translate the original SQL statements from `sqlite` (a_db) into `clickhouse` (b_db) SQL statement pairs. The corresponding MOLT is NoREC (molt).
-``` json
+
+```json
 {  
   "index": 0,  
   "a_db": "sqlite",  
@@ -66,6 +54,7 @@ The input file for QTRAN is a JSONL file in the dictionary `Input` , where each 
   ]  
 }
 ```
+
 ### Transfer Phase
 
 Execute the following commands to run QTRAN.The demo input file `demo1.jsonl` is in dictionary `Input`.
@@ -88,13 +77,14 @@ The explanations for the commands are as follows:
 | `--iteration_num`   | Number of iterations(default: 4)                  |
 
 Default parameter execution,such as:
-``` shell
+
+```bash
 python -m src.main --input_filename "Input/demo1.jsonl" --tool "sqlancer" --temperature 0.7 --model="gpt-3.5-turbo" --error_iteration=True --iteration_num 5
 ```
 
 Custom parameter execution:
 
-``` shell
+```bash
 python -m src.main --input_filename "Input/demo1.jsonl" --tool "sqlancer"
 ```
 
@@ -102,12 +92,6 @@ The intermediate results of the Transfer Phase are stored in the `Output` folder
 
 ### Mutation Phase
 
-The intermediate results of the Mutation Phase are stored in the `Output` folder, specifically in `Output/demo1/MutationLLM`. For each test case, information such as `Mutation Result`, `Mutation Cost`, and `Mutation Time` as well as `Oracle Check` for MOLT is recorded. 
+The intermediate results of the Mutation Phase are stored in the `Output` folder, specifically in `Output/demo1/MutationLLM`. For each test case, information such as `Mutation Result`, `Mutation Cost`, and `Mutation Time` as well as `Oracle Check` for MOLT is recorded.
 
 The suspicious logical bugs detected by QTRAN are stored in the `Output` folder, specifically in `Output/demo1/SuspiciousBugs`, including the final SQL statement pairs extended to new DBMSs through the two phases.
-
-
-
-
-
-

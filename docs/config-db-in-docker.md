@@ -1,20 +1,23 @@
 This document illustrates how to create and run Docker images to build databases(clickhouse, duckdb, mariadb, monetdb, mysql, postgres, sqlite, tidb)  for QTRAN. Follow these steps to replicate the environment.
+
 ## Docker
+
 **Ensure you have the latest version of `Docker Engine` and `Docker Compose` installed.**
+
 ## Step 1: Create and Run Docker Images
 
 1. Navigate to the QTRAN Director
-    
+
     Change to the `QTRAN` directory where the example is located:
-    
+
     ```shell
     cd QTRAN
     ```
-    
+
 2. Build the Docker Image
-    
+
     In `QTRAN` directory, build the image using the Dockerfile:
-    
+
     ```shell
     docker compose up -d
     ```
@@ -27,9 +30,10 @@ Start container instancs with the following command:
 docker compose up -d
 ```
 
-## Step 3: Database 
+## Step 3: Database
 
 Some databases require permission changes or configuration. The specific steps are as follows. Please follow the steps below for configuration.
+
 ### ClickHouse
 
 Enter the ClickHouse container:
@@ -136,6 +140,7 @@ ALTER USER SET PASSWORD '123456' USING OLD PASSWORD 'monetdb';
 ### PostgreSQL
 
 ### SQLite(Embedded Database)
+
 The database **sqlite** doesn't requiring building.Because almost all versions of Linux operating systems come with SQLite pre-installed, we can directly use the system's built-in version without additional building. Note the following points:
 
 1. **Switching Databases**: SQLite does not require the `USE` statement. You can directly specify the database file path.
@@ -186,20 +191,23 @@ tiup update --self && tiup update cluster # update
     service sshd restart
     sudo systemctl enable ssh.service
     ```
-    
+
 5. Create and start the cluster:
 
     Follow the configuration template below to create the configuration file, named `topo.yaml`. The template and the explanation for its parameters are as follows:
+
 - `user: "tidb"`: This means the internal management of the cluster will be done by the `tidb` system user (which will be automatically created during deployment). The default SSH port is 22 to log into the target machine.
 - `replication.enable-placement-rules`: This PD parameter is set to ensure that TiFlash operates properly.
 - `host`: Set this to the IP of the current deployment machine. Make sure to replace all `host` entries in the template with the IP of the deployment machine.
 - Before proceeding, create the `deploy_dir` and `data_dir` folders under `/home/TiDB`:
+
 ```sh
     mkdir -p /home/TiDB/deploy_dir
     mkdir -p /home/TiDB/data_dir
 ```
 
  **The configuration template is as follows:**
+
 ```
 global:
         user: "tidb"
@@ -291,6 +299,7 @@ mysql -h172.24.89.100 -P 4000 -u root -p
 
 
 ## Others
+
 - **Stop all containers**: `docker compose down`
 - **View container status**: `docker compose ps`
 - **View container logs**: `docker compose logs`

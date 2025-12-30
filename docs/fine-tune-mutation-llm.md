@@ -4,7 +4,7 @@ Execute the following command to fine-tune and check the progress of fine-tuning
 
 Navigate to the project directory:
 
-```shell
+```bash
 cd <project_directory>
 ```
 
@@ -18,25 +18,25 @@ The explanations for the **fine-tuning commands** are as follows:
 
 Fine-tune for NoREC:
 
-```shell
+```bash
 python -m src.MutationLlmModelFineTuning.FineTuning_MutationLLM --api_key %OPENAI_API_KEY% --training_data_filename "MutationData/FineTuningTrainingData/norec.jsonl" --suffix "norec"
 ```
 
 Fine-tune for TLP:
 
-```shell
+```bash
 python -m src.MutationLlmModelFineTuning.FineTuning_MutationLLM --api_key %OPENAI_API_KEY% --training_data_filename "MutationData/FineTuningTrainingData/tlp.jsonl" --suffix "tlp"
 ```
 
 Fine-tune for PINOLO:
 
-```shell
+```bash
 python -m src.MutationLlmModelFineTuning.FineTuning_MutationLLM --api_key %OPENAI_API_KEY% --training_data_filename "MutationData/FineTuningTrainingData/pinolo.jsonl" --suffix "pinolo"
 ```
 
 Fine-tune for DQE:
 
-```shell
+```bash
 python -m src.MutationLlmModelFineTuning.FineTuning_MutationLLM --api_key %OPENAI_API_KEY% --training_data_filename "MutationData/FineTuningTrainingData/dqe.jsonl" --suffix "dqe"
 ```
 
@@ -46,7 +46,7 @@ python -m src.MutationLlmModelFineTuning.FineTuning_MutationLLM --api_key %OPENA
 
 Use the following command and the `Fine-tuning Job ID` obtained to check the completion stage of the fine-tuning tasks.
 
-```shell
+```bash
 python -m src.MutationLlmModelFineTuning.FineTuning_MutationLLM --api_key %OPENAI_API_KEY% --job_id ${Fine-tuning Job ID}
 ```
 
@@ -59,7 +59,7 @@ The explanation for the command is as follows:
 
 The output result of a successful fine-tuning task will look like this. Be sure to record the fine-tuned model ID `Fine-tuned Model ID` for use in future QTRAN mutation LLM tasks:
 
-```shell
+```bash
 The Fine-tuning Job ${Fine-tuning Job ID} has been finished.
 The fine_tuned_model ID is: ${Fine-tuned Model ID}.
 ```
